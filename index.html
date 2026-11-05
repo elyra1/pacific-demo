@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="PACIFIC — вертикальный срез кооперативной игры про перевозку грузов на корабле."
+    />
+    <title>PACIFIC</title>
+    <script type="module" crossorigin src="./assets/index-CCNqAOsn.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Cm_qBksZ.css">
+  </head>
+  <body>
+    <canvas id="app"></canvas>
+
+    <div id="hud">
+      <header class="hud-header">
+        <div class="hud-brand">PACIFIC</div>
+
+        <div id="hud-route" class="hud-route">
+          <div class="hud-route-head">
+            <span class="hud-route-name">Маршрут</span>
+            <span id="hud-route-phase" class="hud-route-phase">в пути</span>
+          </div>
+          <div id="hud-route-detail" class="hud-route-detail">
+            До точки Б: —
+          </div>
+          <div id="hud-food" class="hud-route-detail">Еда: 0/3 · в кормушке: 0</div>
+          <div id="hud-cargo" class="hud-route-detail">Слоты крепления: 0/1</div>
+        </div>
+
+        <div id="hud-storm" class="hud-storm is-calm">
+          <div class="hud-storm-head">
+            <span class="hud-storm-name">Море</span>
+            <span id="hud-storm-phase" class="hud-storm-phase">штиль</span>
+          </div>
+          <i class="hud-storm-meter"><b id="hud-storm-level"></b></i>
+          <div
+            id="hud-storm-warning"
+            class="hud-storm-warning is-hidden"
+          ></div>
+        </div>
+
+        <div id="hud-monster" class="hud-monster">
+          <div class="hud-monster-head">
+            <span class="hud-monster-name">Морская звезда</span>
+            <span id="hud-monster-mood" class="hud-monster-mood">спокоен</span>
+          </div>
+          <div class="hud-meter">
+            <span>Голод</span>
+            <i><b id="hud-monster-hunger"></b></i>
+          </div>
+          <div class="hud-meter">
+            <span>Спокойствие</span>
+            <i><b id="hud-monster-calm"></b></i>
+          </div>
+          <div class="hud-meter">
+            <span>Здоровье</span>
+            <i><b id="hud-monster-health"></b></i>
+          </div>
+          <div id="hud-monster-feed" class="hud-meter hud-monster-feed is-hidden">
+            <span>Покормить</span>
+            <i><b id="hud-monster-feed-fill"></b></i>
+            <em id="hud-monster-feed-value">0%</em>
+          </div>
+        </div>
+      </header>
+
+      <div class="hud-crosshair" aria-hidden="true"></div>
+
+      <div id="hud-action" class="hud-action is-hidden">
+        <div class="hud-action-main">
+          <kbd id="hud-action-key" class="hud-action-key">E</kbd>
+          <span id="hud-action-label" class="hud-action-label"></span>
+        </div>
+        <div id="hud-action-reason" class="hud-action-reason is-hidden"></div>
+        <div id="hud-action-secondary" class="hud-action-secondary is-hidden"></div>
+      </div>
+
+      <canvas
+        id="hud-minimap"
+        class="hud-minimap"
+        width="336"
+        height="336"
+        aria-label="Мини-карта маршрута"
+      ></canvas>
+
+      <footer class="hud-footer">
+        <div class="hud-meta">
+          <div id="hud-debug" class="hud-debug"></div>
+          <div id="hud-status" class="hud-status">Загрузка…</div>
+        </div>
+      </footer>
+    </div>
+
+    <div id="hud-outcome" class="hud-outcome is-hidden">
+      <div class="hud-outcome-card">
+        <h2 id="hud-outcome-title" class="hud-outcome-title">Победа</h2>
+        <p id="hud-outcome-text" class="hud-outcome-text"></p>
+        <ul id="hud-outcome-stats" class="hud-outcome-stats"></ul>
+        <p class="hud-outcome-hint">R — начать заново</p>
+      </div>
+    </div>
+
+    <noscript>Для запуска PACIFIC нужен включённый JavaScript.</noscript>
+  </body>
+</html>
