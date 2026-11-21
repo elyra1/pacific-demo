@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="PACIFIC — лучшая компания по перевозке монстров"
+      content="PACIFIC — лучшая компания по перевозке монстров. Демо: довезите груз из точки А в Б и не дайте ему сбежать."
     />
     <title>PACIFIC</title>
-    <script type="module" crossorigin src="./assets/index-CCNqAOsn.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Cm_qBksZ.css">
+    <script type="module" crossorigin src="./assets/index-DbkHMCSo.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-C_2bt8fj.css">
   </head>
   <body>
     <canvas id="app"></canvas>
@@ -100,6 +100,45 @@
         <p id="hud-outcome-text" class="hud-outcome-text"></p>
         <ul id="hud-outcome-stats" class="hud-outcome-stats"></ul>
         <p class="hud-outcome-hint">R — начать заново</p>
+      </div>
+    </div>
+
+    <div id="hud-pause" class="hud-pause is-hidden">
+      <div class="hud-pause-card">
+        <h2 class="hud-pause-title">Пауза</h2>
+
+        <div class="hud-pause-row">
+          <div class="hud-pause-row-head">
+            <label for="hud-pause-sensitivity">Чувствительность мыши</label>
+            <em id="hud-pause-sensitivity-value">1.00×</em>
+          </div>
+          <input
+            id="hud-pause-sensitivity"
+            type="range"
+            min="0.5"
+            max="2"
+            step="0.05"
+            value="1"
+          />
+        </div>
+
+        <div class="hud-pause-qr">
+          <img
+            id="hud-pause-qr-image"
+            width="216"
+            height="216"
+            alt="QR-код со ссылкой на форму обратной связи по демо"
+          />
+          <p>
+            Наведите камеру телефона — короткая форма по демо: что зашло, что
+            бесит, что добавить.
+          </p>
+        </div>
+
+        <button id="hud-pause-resume" class="hud-pause-button" type="button">
+          Продолжить
+        </button>
+        <p class="hud-pause-hint">Esc — пауза · R — заново</p>
       </div>
     </div>
 
